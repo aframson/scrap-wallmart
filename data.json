@@ -43,5 +43,10 @@
     "url": "https://www.walmart.com/ip/SAMSUNG --output main.json",
     "name": null,
     "price": null
+  },
+  {
+    "url": "https://www.walmart.com/ip/SAMSUNG -o main.json",
+    "name": null,
+    "price": null
   }
 ]
