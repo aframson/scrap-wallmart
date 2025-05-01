@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/25 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -r requirements.txt
-      - run: python scrape.py "https://www.walmart.com/ip/SAMSUNG" -o main.json
+      - run: python scrape.py "https://www.walmart.com/ip/SAMSUNG" -o somenewoutput.json
       - name: Commit results
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
