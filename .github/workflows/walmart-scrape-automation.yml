@@ -17,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Create venv
+        run: python -m venv .venv
+      - name: Activate venv
+        run: source .venv/bin/activate
       - run: pip install -r requirements.txt
       - run: python scrape.py "https://www.walmart.com/ip/SAMSUNG" -o somenewoutput.json
       - name: Commit results
