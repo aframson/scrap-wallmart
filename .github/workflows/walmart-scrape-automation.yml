@@ -22,7 +22,7 @@ jobs:
       - name: Activate venv
         run: source .venv/bin/activate
       - run: pip install -r requirements.txt
-      - run: python scrape.py "https://www.walmart.com/ip/SAMSUNG" -o somenewoutput.json
+      - run: python -m "https://www.walmart.com/ip/SAMSUNG" -o somenewoutput.json
       - name: Commit results
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
