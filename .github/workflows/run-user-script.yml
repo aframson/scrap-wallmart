@@ -1,4 +1,3 @@
-
 name: Run User Script
 on:
   workflow_dispatch:
@@ -14,17 +13,11 @@ on:
 jobs:
   execute-script:
     runs-on: ubuntu-latest
-    env:
-      API_URL: ${{ secrets.API_URL }}
 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install requirements
-        if: ${{ github.event.inputs.install_requirements == 'true' }}
-        run: |
-          pip install -r requirements.txt
       - name: Execute script
         run: python "${{ github.event.inputs.filepath }}"
